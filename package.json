@@ -6,5 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./index.js"
+  },
+  "dependencies": {
+    "twitter-api-v2": "^1.5.2"
   }
 }
