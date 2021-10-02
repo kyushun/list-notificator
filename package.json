@@ -1,0 +1,10 @@
+{
+  "name": "tweet-notification",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kyushun <kyushun12@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
