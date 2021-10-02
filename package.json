@@ -1,11 +1,11 @@
 {
   "name": "tweet-notification",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "author": "kyushun <kyushun12@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.mjs"
   },
   "dependencies": {
     "twitter-api-v2": "^1.5.2"
