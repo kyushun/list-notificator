@@ -46,7 +46,7 @@ const checkTweets = async () => {
     Promise.all(tweets.map((tw) => postToDiscord(`https://twitter.com/_/status/${tw.id_str}`)));
   }
 
-  await redis.set('checked-at', dayjs().format())
+  await redis.set('checked-at', dayjs().format());
 };
 
 process.on('SIGINT', () => {
@@ -54,4 +54,4 @@ process.on('SIGINT', () => {
 });
 
 checkTweets();
-setInterval(checkTweets, 5 * 60 * 1000);
+setInterval(checkTweets, (parseInt(process.env.INTERVAL_MIN, 10) || 5) * 60 * 1000);
