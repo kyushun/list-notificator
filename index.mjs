@@ -49,5 +49,9 @@ const checkTweets = async () => {
   await redis.set('checked-at', dayjs().format())
 };
 
+process.on('SIGINT', () => {
+  redis.disconnect();
+});
+
 checkTweets();
 setInterval(checkTweets, 5 * 60 * 1000);
