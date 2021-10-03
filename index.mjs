@@ -37,7 +37,14 @@ const checkTweets = async () => {
 
   const checkedAt = await redis.get('checked-at');
 
-  const lists = await twitter.v1.listStatuses({list_id: process.env.LIST_ID});
+  let lists;
+
+  try {
+    lists = await twitter.v1.listStatuses({list_id: process.env.LIST_ID});
+  } catch (e) {
+    console.error(e);
+    return;
+  }
 
   if (checkedAt) {
     const tweets = lists.tweets.filter(tw => dayjs(tw.created_at).isAfter(checkedAt));
