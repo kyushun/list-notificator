@@ -8,6 +8,7 @@
     "start": "node ./index.mjs"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
     "ioredis": "^4.27.9",
     "twitter-api-v2": "^1.5.2"
